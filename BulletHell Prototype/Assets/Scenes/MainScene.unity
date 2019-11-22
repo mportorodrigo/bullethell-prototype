@@ -296,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265366538}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -340,6 +340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1930aa2f7db1cfd4b9169f4558a6c9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 1135822336036084510, guid: 371d5bbc39f9d8c408c4e851aa6f327e,
+    type: 3}
+  speed: 3
+  fireRate: 1
 --- !u!114 &265366543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +353,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 265366538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1930aa2f7db1cfd4b9169f4558a6c9dc, type: 3}
+  m_Script: {fileID: 11500000, guid: ffa257000a7022944a10c9d25ed3624b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028
@@ -463,7 +467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237aa2617ac7ca54c92f8312308c3d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
 --- !u!4 &1505943039
 Transform:
   m_ObjectHideFlags: 0
