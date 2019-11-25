@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 30.0f;
-    public float damage = 5.0f;
+    [SerializeField] private float speed = 10.0f;
+    private Rigidbody2D projectileRb;
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    void Start()
     {
-        // Moves the projectile
-        transform.Translate(Vector3.up * Time.deltaTime * speed);
+        projectileRb = GetComponent<Rigidbody2D>();
+        projectileRb.velocity = transform.up * speed;
     }
 }
