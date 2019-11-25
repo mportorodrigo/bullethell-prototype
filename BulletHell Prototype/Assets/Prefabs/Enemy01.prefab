@@ -124,7 +124,9 @@ MonoBehaviour:
   projectile: {fileID: 1135822336036084510, guid: 371d5bbc39f9d8c408c4e851aa6f327e,
     type: 3}
   firePoint: {fileID: 307587920336005635}
-  speed: 2
+  speed: 1
+  healthPoints: 10
+  damageTaken: 10
   fireRate: 1
 --- !u!114 &307587918531496000
 MonoBehaviour:
