@@ -10,7 +10,6 @@ public class HomingProjectile : MonoBehaviour
     private Transform target;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
-    public float damage = 5.0f;
 
     // Start is called before the first frame update
     void Start()

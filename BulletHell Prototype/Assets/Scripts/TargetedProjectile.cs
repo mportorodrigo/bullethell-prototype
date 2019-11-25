@@ -7,7 +7,6 @@ public class TargetedProjectile : MonoBehaviour
     [SerializeField] private float speed = 10.0f;
     private GameObject target;
     private Vector2 moveDirection;
-    public float damage = 5.0f;
 
     // Start is called before the first frame update
     void Start()
