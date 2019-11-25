@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField] private GameObject projectile;
+    [SerializeField] private Transform firePoint;
     [SerializeField] private float speed = 10.0f;
     [SerializeField] private float fireRate = 1.0f;
     private float nextFire;
@@ -28,7 +29,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            Instantiate(projectile, transform.position, transform.rotation);
+            Instantiate(projectile, firePoint.position, firePoint.rotation);
             nextFire = Time.time + fireRate;
         }
     }
