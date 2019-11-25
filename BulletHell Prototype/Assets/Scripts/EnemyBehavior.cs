@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    // Component variables
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform firePoint;
+
+    // Behaviour variables
     [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float healthPoints = 10.0f;
+    [SerializeField] private float damageTaken = 10.0f;
     [SerializeField] private float fireRate = 1.0f;
     private float nextFire;
 
@@ -31,6 +37,15 @@ public class EnemyBehavior : MonoBehaviour
         {
             Instantiate(projectile, firePoint.position, firePoint.rotation);
             nextFire = Time.time + fireRate;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        healthPoints -= damageTaken;
+        if(healthPoints <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
