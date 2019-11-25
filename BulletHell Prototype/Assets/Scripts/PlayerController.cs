@@ -1,18 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     // Component variables
     [SerializeField] GameObject projectile;
+    [SerializeField] TextMeshProUGUI healthText;
 
     // Behavior variables
     [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float healthPoints = 30.0f;
 
     // Input variables
     private float horizontalInput;
     private float verticalInput;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        healthText.text = "HP: " + healthPoints;
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,5 +38,11 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(projectile, transform.position, transform.rotation);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        healthPoints -= 5;
+        healthText.text = "HP: " + healthPoints;
     }
 }
