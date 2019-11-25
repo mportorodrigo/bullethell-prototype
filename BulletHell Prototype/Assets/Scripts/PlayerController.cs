@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     // Component variables
     [SerializeField] GameObject projectile;
+    [SerializeField] Transform firePoint;
     [SerializeField] TextMeshProUGUI healthText;
 
     // Behavior variables
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
         // Shoot a projectile
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectile, transform.position, transform.rotation);
+            Instantiate(projectile, firePoint.position, firePoint.rotation);
         }
     }
 
