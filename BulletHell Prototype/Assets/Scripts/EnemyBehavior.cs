@@ -43,7 +43,7 @@ public class EnemyBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         healthPoints -= damageTaken;
-        if(healthPoints <= 0)
+        if (healthPoints <= 0)
         {
             Destroy(gameObject);
         }
