@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         healthText.text = "HP: " + healthPoints;
-
     }
 
     // Update is called once per frame
@@ -46,12 +45,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy Bullet"))
+        if (collision.CompareTag("Enemy Bullet"))
         {
             // Remove the enemy bullet
             Destroy(collision.gameObject);
+
             healthPoints -= 5;
             healthText.text = "HP: " + healthPoints;
+
+            if (healthPoints <= 0)
+            {
+                gameManager.GameOver();
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -37,9 +37,14 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+    public void GameOver()
+    {
+        isGameActive = false;
+    }
+
     IEnumerator SpawnEnemy()
     {
-        while (true)
+        while (isGameActive)
         {
             yield return new WaitForSeconds(spawnRate);
             int index = Random.Range(0, enemies.Count);
