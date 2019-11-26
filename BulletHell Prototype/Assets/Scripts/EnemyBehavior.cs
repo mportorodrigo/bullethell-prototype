@@ -37,7 +37,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Shoot()
     {
-        if (Time.time > nextFire)
+        if (Time.time > nextFire && gameManager.isGameActive == true)
         {
             Instantiate(projectile, firePoint.position, firePoint.rotation);
             nextFire = Time.time + fireRate;

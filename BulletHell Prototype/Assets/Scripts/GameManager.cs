@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     // Game mechanics
     [SerializeField] private float spawnRate = 1.0f;
     [SerializeField] private int score = 0;
-    private bool isGameActive;
+    public bool isGameActive;
 
     // Spawn bounds
     private float xRange = 8;
