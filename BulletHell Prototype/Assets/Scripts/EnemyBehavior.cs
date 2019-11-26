@@ -14,12 +14,13 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private float healthPoints = 10.0f;
     [SerializeField] private float damageTaken = 10.0f;
     [SerializeField] private float fireRate = 1.0f;
+    [SerializeField] private float waitBeforeShoot = 1.0f;
     private float nextFire;
 
     // Start is called before the first frame update
     void Start()
     {
-        nextFire = Time.time;
+        nextFire = Time.time + waitBeforeShoot;
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         // Move the enemy ship
         transform.Translate(Vector3.up * Time.deltaTime * speed);
-
+        
         Shoot();
     }
 

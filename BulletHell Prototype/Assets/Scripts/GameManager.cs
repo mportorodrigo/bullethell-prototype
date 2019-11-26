@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     // Spawn bounds
     private float xRange = 8;
-    private float ySpawnPos = 5;
+    private float ySpawnPos = 6;
 
     // Start is called before the first frame update
     void Start()
