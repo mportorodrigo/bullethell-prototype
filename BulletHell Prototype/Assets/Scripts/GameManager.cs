@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // Component variables
     [SerializeField] private List<GameObject> enemies;
+
+    // UI components
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private GameObject gameOverMenu;
 
     // Game mechanics
     [SerializeField] private float spawnRate = 1.0f;
@@ -40,6 +44,12 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
+        gameOverMenu.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().path);
     }
 
     IEnumerator SpawnEnemy()
