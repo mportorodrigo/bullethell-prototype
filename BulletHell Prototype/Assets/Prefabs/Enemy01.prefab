@@ -127,6 +127,7 @@ MonoBehaviour:
   speed: 1
   healthPoints: 10
   damageTaken: 10
+  scoreToAdd: 10
   fireRate: 1
   waitBeforeShoot: 1
 --- !u!114 &307587918531496000

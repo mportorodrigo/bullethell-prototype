@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] Transform firePoint;
     [SerializeField] TextMeshProUGUI healthText;
+    GameManager gameManager;
 
     // Behavior variables
     [SerializeField] private float speed = 10.0f;
@@ -21,7 +22,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         healthText.text = "HP: " + healthPoints;
+
     }
 
     // Update is called once per frame

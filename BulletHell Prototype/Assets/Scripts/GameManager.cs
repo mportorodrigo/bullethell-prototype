@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     // Component variables
     [SerializeField] private List<GameObject> enemies;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     // Game mechanics
     [SerializeField] private float spawnRate = 1.0f;
+    [SerializeField] private int score = 0;
     private bool isGameActive;
 
     // Spawn bounds
@@ -26,6 +29,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
     }
 
     IEnumerator SpawnEnemy()

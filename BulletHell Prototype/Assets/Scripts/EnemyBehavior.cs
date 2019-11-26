@@ -8,11 +8,13 @@ public class EnemyBehavior : MonoBehaviour
     // Component variables
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform firePoint;
+    GameManager gameManager;
 
     // Behaviour variables
     [SerializeField] private float speed = 10.0f;
     [SerializeField] private float healthPoints = 10.0f;
     [SerializeField] private float damageTaken = 10.0f;
+    [SerializeField] private int scoreToAdd = 10;
     [SerializeField] private float fireRate = 1.0f;
     [SerializeField] private float waitBeforeShoot = 1.0f;
     private float nextFire;
@@ -20,6 +22,7 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         nextFire = Time.time + waitBeforeShoot;
     }
 
@@ -54,6 +57,7 @@ public class EnemyBehavior : MonoBehaviour
             if (healthPoints <= 0)
             {
                 Destroy(gameObject);
+                gameManager.UpdateScore(scoreToAdd);
             }
         }
     }
