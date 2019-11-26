@@ -43,7 +43,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        healthPoints -= 5;
-        healthText.text = "HP: " + healthPoints;
+        if(collision.CompareTag("Enemy Bullet"))
+        {
+            // Remove the enemy bullet
+            Destroy(collision.gameObject);
+            healthPoints -= 5;
+            healthText.text = "HP: " + healthPoints;
+        }
     }
 }

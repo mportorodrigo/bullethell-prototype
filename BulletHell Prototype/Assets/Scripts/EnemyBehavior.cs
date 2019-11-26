@@ -43,10 +43,18 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        healthPoints -= damageTaken;
-        if (healthPoints <= 0)
+        if (collision.CompareTag("Player Bullet"))
         {
-            Destroy(gameObject);
+            // Remove the player bullet
+            Destroy(collision.gameObject);
+
+            // Deduce the health from the enemy
+            healthPoints -= damageTaken;
+            
+            if (healthPoints <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
