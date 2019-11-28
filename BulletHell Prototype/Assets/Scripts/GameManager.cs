@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScore(int scoreToAdd)
     {
-        score += scoreToAdd;
+        score += scoreToAdd * selectedDifficulty;
         scoreText.text = "Score: " + score;
     }
 
