@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     // Behavior variables
     [SerializeField] private float speed = 10.0f;
     [SerializeField] private float healthPoints = 30.0f;
+    [SerializeField] private float baseDamage = 5.0f;
 
     // Input variables
     private float horizontalInput;
@@ -50,7 +51,8 @@ public class PlayerController : MonoBehaviour
             // Remove the enemy bullet
             Destroy(collision.gameObject);
 
-            healthPoints -= 5;
+            // Cause damage to the player based on baseDamage multiplied by difficulty
+            healthPoints -= baseDamage * gameManager.selectedDifficulty;
             healthText.text = "HP: " + healthPoints;
 
             if (healthPoints <= 0)

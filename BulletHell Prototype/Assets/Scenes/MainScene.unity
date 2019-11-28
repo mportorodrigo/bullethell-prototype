@@ -342,6 +342,7 @@ MonoBehaviour:
   healthText: {fileID: 430417545}
   speed: 10
   healthPoints: 30
+  baseDamage: 5
 --- !u!114 &171058347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2565,6 +2566,7 @@ MonoBehaviour:
   spawnRate: 2
   score: 0
   isGameActive: 0
+  selectedDifficulty: 0
 --- !u!4 &1505943039
 Transform:
   m_ObjectHideFlags: 0

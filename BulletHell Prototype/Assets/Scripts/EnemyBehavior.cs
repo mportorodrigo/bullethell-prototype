@@ -24,6 +24,9 @@ public class EnemyBehavior : MonoBehaviour
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         nextFire = Time.time + waitBeforeShoot;
+
+        // Increase the enemy health points according to the selected difficulty
+        healthPoints *= gameManager.selectedDifficulty;
     }
 
     // Update is called once per frame

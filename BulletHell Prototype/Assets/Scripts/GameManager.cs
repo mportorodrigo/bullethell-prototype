@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float spawnRate = 1.0f;
     [SerializeField] private int score = 0;
     public bool isGameActive;
+    public int selectedDifficulty;
 
     // Spawn bounds
     private float xRange = 8;
@@ -46,6 +47,8 @@ public class GameManager : MonoBehaviour
     {
         startMenu.SetActive(false);
         hud.SetActive(true);
+
+        selectedDifficulty = difficulty;
 
         isGameActive = true;
         StartCoroutine(SpawnEnemy());
