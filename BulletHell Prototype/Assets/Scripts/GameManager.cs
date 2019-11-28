@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
 
     // UI components
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private GameObject hud;
 
     // Game mechanics
     [SerializeField] private float spawnRate = 1.0f;
@@ -25,8 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
-        StartCoroutine(SpawnEnemy());
+        
     }
 
     // Update is called once per frame
@@ -39,6 +40,15 @@ public class GameManager : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
+    }
+
+    public void StartGame(int difficulty)
+    {
+        startMenu.SetActive(false);
+        hud.SetActive(true);
+
+        isGameActive = true;
+        StartCoroutine(SpawnEnemy());
     }
 
     public void GameOver()
