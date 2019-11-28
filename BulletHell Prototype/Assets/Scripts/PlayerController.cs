@@ -6,10 +6,10 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     // Component variables
-    [SerializeField] GameObject projectile;
-    [SerializeField] Transform firePoint;
-    [SerializeField] TextMeshProUGUI healthText;
-    GameManager gameManager;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private TextMeshProUGUI healthText;
+    private GameManager gameManager;
 
     // Behavior variables
     [SerializeField] private float speed = 10.0f;

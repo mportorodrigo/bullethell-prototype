@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class EnemyBehavior : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
     // Component variables
     [SerializeField] private GameObject projectile;

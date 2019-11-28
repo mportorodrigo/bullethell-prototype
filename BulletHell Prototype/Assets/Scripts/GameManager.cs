@@ -25,18 +25,6 @@ public class GameManager : MonoBehaviour
     private float xRange = 8;
     private float ySpawnPos = 6;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd * selectedDifficulty;
